@@ -6,9 +6,6 @@ Link: https://leetcode.com/problems/remove-k-digits/description/?envType=problem
 Author: AAYANK SINGHAI (MT2025001)
 
 */
-
-package StacksQueues;
-
 import java.util.Stack;
 
 public class RemoveKDigits {

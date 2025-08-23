@@ -8,8 +8,6 @@
  * Author: AAYANK SINGHAI (MT2025001)
  */
 
-package StacksQueues;
-
 import java.util.Stack;
 
 public class ValidateStackSequences {

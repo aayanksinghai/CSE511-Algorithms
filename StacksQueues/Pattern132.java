@@ -8,8 +8,9 @@
  * 
  */
 
+import java.util.Stack;
 
-public class 132Pattern {
+public class Pattern132 {
     public boolean find132pattern(int[] nums) {
         // Brute Force Approach O(N^2)
         /*        int length = nums.length;
