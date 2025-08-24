@@ -12,6 +12,33 @@ A subarray is a contiguous part of an array.
 
 public class CountSubArraysWithFixedBounds {
     public long countSubarrays(int[] nums, int minK, int maxK) {
-        
+        long subArrayCnt = 0;
+        int minKPos = -1;
+        int maxKPos = -1;
+        int leftBound = -1;
+
+        for (int i = 0; i < nums.length; i++) {
+            int currentNo = nums[i];
+            if (currentNo < minK || currentNo > maxK) {
+                leftBound = i;
+                minKPos = -1;
+                maxKPos = -1;
+                continue;
+            }
+
+            if (currentNo == minK) {
+                minKPos = i;
+            }
+            if (currentNo == maxK) {
+                maxKPos = i;
+            }
+
+            if (minKPos != -1 && maxKPos != -1) {
+                int validStart = Math.min(minKPos, maxKPos);
+                subArrayCnt += (validStart - leftBound);
+            }
+        }
+
+        return subArrayCnt;
     }
 }
