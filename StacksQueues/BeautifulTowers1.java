@@ -18,8 +18,6 @@ public class BeautifulTowers1 {
         for (int peakIndex = 0; peakIndex < noOfTowers; peakIndex++) {
 
             long[] currentTHeights = new long[noOfTowers];
-
-            // The peak tower is set to its maximum possible value.
             currentTHeights[peakIndex] = maxHeights[peakIndex]; 
 
             // Build the left slope (non-decreasing part).
@@ -38,14 +36,12 @@ public class BeautifulTowers1 {
                 prevHeightOnSlope = newHeight;
             }
             
-            // Calculate the sum for this configuration.
-            long currentSum = 0;
+            long currentSum = 0; // Calculate the sum for this configuration.
             for (long height : currentTHeights) {
                 currentSum += height;
             }
             
-            // Update the overall maximum sum found so far.
-            overallMaxSum = Math.max(overallMaxSum, currentSum);
+            overallMaxSum = Math.max(overallMaxSum, currentSum); // Update the overall maximum sum found so far.
         }
 
         return overallMaxSum;

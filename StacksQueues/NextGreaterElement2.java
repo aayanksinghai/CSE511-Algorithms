@@ -43,7 +43,6 @@ class Solution {
         */
 
         // Optimal Approach Using Stack
-        // Optimal Approach Using Stack
         Stack<Integer> st = new Stack<>();        
         int len = arr.length;
         int[] ans = new int[len];
