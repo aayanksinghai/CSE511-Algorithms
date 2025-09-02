@@ -15,6 +15,7 @@ import java.util.List;
 public class ReversePairs {
     public int reversePairs(int[] nums) {
         // Brute Force Approach
+        // prettier-ignore
         /*
          * int counter = 0;
          * int n = nums.length;
