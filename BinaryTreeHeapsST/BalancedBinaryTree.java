@@ -2,6 +2,8 @@
  * Link: https://leetcode.com/problems/balanced-binary-tree/?envType=problem-list-v2&envId=binary-tree
  * Given a binary tree, determine if it is height-balanced.
  * Author: AAYANK SINGHAI (MT2025001)
+ * 
+ * Link: https://leetcode.com/problems/balanced-binary-tree/description/?envType=problem-list-v2&envId=binary-tree
  */
 
 //Definition for a binary tree node.
@@ -36,7 +38,6 @@ class Solution {
         int left = depth(root.left);
         if (left == -1)
             return -1;
-        ;
 
         int right = depth(root.right);
         if (right == -1)

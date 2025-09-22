@@ -28,6 +28,7 @@ public class PathSum {
 
 class Solution {
     public boolean hasPathSum(PathSum root, int targetSum) {
+        // TC: O(N) SC: O(H)
         if (root == null)
             return false;
 
