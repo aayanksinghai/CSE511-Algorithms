@@ -13,11 +13,28 @@ public class SegmentTree {
 
         int q = sc.nextInt();
         while (q-- > 0) {
-            int l = sc.nextInt();
-            int r = sc.nextInt();
-            System.out.println(query(0, 0, n - 1, l, r, seg));
+            int type = sc.nextInt();
+            if (type == 1) {
+                int l = sc.nextInt();
+                int r = sc.nextInt();
+                System.out.println(query(0, 0, n - 1, l, r, seg));
+            } else {
+                int i = sc.nextInt();
+                int val = sc.nextInt();
+                update(0, 0, n - 1, i, val, seg);
+                arr[i] = val;
+            }
         }
         sc.close();
+
+        /*
+         * 6
+         * 2 1 0 3 5 4
+         * 3
+         * 1 1 3
+         * 2 2 4
+         * 1 1 3
+         */
 
     }
 
@@ -48,6 +65,21 @@ public class SegmentTree {
         int left = query(2 * ind + 1, low, mid, l, r, seg);
         int right = query(2 * ind + 2, mid + 1, high, l, r, seg);
         return Math.min(left, right);
+    }
+
+    private static void update(int ind, int low, int high, int i, int val, int[] seg) {
+        if (low == high) {
+            seg[ind] = val;
+            return;
+        }
+
+        int mid = (low + high) / 2;
+        if (i <= mid)
+            update(2 * ind + 1, low, mid, i, val, seg);
+        else
+            update(2 * ind + 2, mid + 1, high, i, val, seg);
+
+        seg[ind] = Math.min(seg[2 * ind + 1], seg[2 * ind + 2]);
     }
 
 }
