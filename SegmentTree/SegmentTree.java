@@ -27,6 +27,7 @@ public class SegmentTree {
         }
         sc.close();
 
+        // Test Case to run
         /*
          * 6
          * 2 1 0 3 5 4
